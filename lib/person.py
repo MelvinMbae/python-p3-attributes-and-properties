@@ -17,7 +17,7 @@ APPROVED_JOBS = [
 
 class Person:
     
-    def __init__(self, name = "", job ="Sales"):
+    def __init__(self, name = "", job =""):
         self.set_name(name)
         self._job = job
     def get_name(self):
@@ -49,8 +49,5 @@ class Person:
     job = property(get_job, set_job)    
         
 melvin = Person(name = "", job="Sales")
-melvin.name = 0
-# melvin.job
-melvin.job = "Admin"
-print(melvin.job)
+
 

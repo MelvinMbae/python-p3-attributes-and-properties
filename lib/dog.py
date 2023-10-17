@@ -15,10 +15,10 @@ class Dog:
     
     dog_list = []
     
-    def __init__(self, name = ""):
+    def __init__(self, name = "", breed = ""):
         self.__set_dog_name(name)
         # self._name = name 
-        self._breed = ""
+        self._breed = breed
         
         
         
@@ -32,7 +32,7 @@ class Dog:
             self._name = name
             
         else:
-            print( "Name must be string between 1 and 25 characters.")
+            print("Name must be string between 1 and 25 characters.")
         
     name = property(get_dog_name, __set_dog_name)
     
@@ -51,4 +51,4 @@ class Dog:
     breed = property(get_breed, set_breed)
         
 fido = Dog(name = "Fido")
-fido.breed = "retr"
+fido = Dog(breed = "Human")
