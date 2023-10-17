@@ -17,37 +17,35 @@ APPROVED_JOBS = [
 
 class Person:
     
-    def __init__(self, name = "", job =""):
+    def __init__(self, name = None, job = None):
         self.set_name(name)
-        self._job = job
+        self.set_job(job)
+
     def get_name(self):
         print("retrieving name")
-        return self._name
+        return self.name
     
     def set_name(self, name):
-        if  isinstance(name, str) and 1 <= len(name) <= 25:
+        if name is None:
+            pass
+        elif  isinstance(name, str) and 1 <= len(name) <= 25:
             print("Name is valid")
-            self._name = name.title()
+            self.name = name.title()
         else:
             print("Name must be string between 1 and 25 characters.")
             
-        
-    name = property(get_name, set_name)
-    
     def get_job(self):
-        print("Retrieving job")
-        return self._job
+        return self.job
     
     def set_job(self, job):
         if job in APPROVED_JOBS:
-            print("Setting job")
-            self._job = job
-            
+            self.job = job 
         else:
             print("Job must be in list of approved jobs.")
             
-    job = property(get_job, set_job)    
-        
-melvin = Person(name = "", job="Sales")
+# melvin = Person(name = "", job="Sales")
+person2 = Person()
+person2.job="Benevolent dictator for life"
+
 
 
